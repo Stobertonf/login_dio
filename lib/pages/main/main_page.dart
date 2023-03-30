@@ -20,7 +20,7 @@ class _MainPageState extends State<MainPage> {
         ),
         drawer: Drawer(
           child: Padding(
-            padding: EdgeInsets.symmetric(vertical: 20, horizontal: 10,),
+            padding: const  EdgeInsets.symmetric(vertical: 20, horizontal: 10,),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -30,6 +30,7 @@ class _MainPageState extends State<MainPage> {
                       width: double.infinity,
                       child:const Text("Dados cadastráis",),),
                   onTap: () {
+                    //Tem que ser antes pra remover a tela e fazer o push.
                     Navigator.pop(context);
                     Navigator.push(
                         context,
