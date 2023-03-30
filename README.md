@@ -10,7 +10,7 @@
 
 ## Escopo
 
-📚 Neste projeto, eu vou ter a oportunidade de fazer um app com uma Tela de Login, páginas, drawer e navegação.
+📚 Neste projeto, eu vou ter a oportunidade de fazer um app com uma Tela de Login, drawer e navegação.
 
 ## Foco
 
