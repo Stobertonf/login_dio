@@ -48,7 +48,7 @@ class _MainPageState extends State<MainPage> {
                   child: Container(
                       padding: const EdgeInsets.symmetric(vertical: 5),
                       width: double.infinity,
-                      child:const Text("Termos de uso e privacidade",),),
+                      child:const Text("Termos & Conditions",),),
                   onTap: () {},
                 ),
                 const Divider(),
@@ -59,7 +59,13 @@ class _MainPageState extends State<MainPage> {
                   child: Container(
                       padding: const EdgeInsets.symmetric(vertical: 5),
                       width: double.infinity,
-                      child: const Text("Configurações"),),
+                      child: const Text(
+                        "Settings",
+                          style: TextStyle(
+                             fontSize: 20,
+                            color: Colors.black,
+                        ),
+                      ),),
                   onTap: () {},
                 ),
               ],
@@ -77,9 +83,20 @@ class _MainPageState extends State<MainPage> {
                   });
                 },
                 children:  [
-                  Container(),
-                  Container(),
-                  Container(),
+                  Container(
+                    width: 100,
+                    height: 100,
+                    color: Colors. red
+                  ),
+                  Container(
+                     width: 100,
+                    height: 100,
+                    color: Colors. black
+                  ),
+                  Container( 
+                    width: 100,
+                    height: 100,
+                    color: Colors. blue),
                 ],
               ),
             ),
