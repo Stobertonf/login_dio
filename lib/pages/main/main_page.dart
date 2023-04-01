@@ -3,6 +3,7 @@ import 'package:login_dio_flutter/pages/lists/list_view.dart';
 import 'package:login_dio_flutter/pages/tasks/tasks_page.dart';
 import 'package:login_dio_flutter/pages/lists/list_view_horizontal.dart';
 import 'package:login_dio_flutter/pages/registration/image_assets.dart';
+import 'package:login_dio_flutter/shared/custon_drawer.dart';
 
 
 class MainPage extends StatefulWidget {
@@ -23,60 +24,7 @@ class _MainPageState extends State<MainPage> {
         appBar: AppBar(
           title: const Text("Main Page"),
         ),
-        drawer: Drawer(
-          child: Padding(
-            padding: const  EdgeInsets.symmetric(vertical: 20, horizontal: 10,),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                InkWell(
-                  child: Container(
-                      padding:const EdgeInsets.symmetric(vertical: 5,),
-                      width: double.infinity,
-                      child:const Text("Dados cadastráis",),),
-                  onTap: () {
-                    //Tem que ser antes pra remover a tela e fazer o push.
-                    Navigator.pop(context);
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const MainPage(
-                                 
-                                ),),);
-                  },
-                ),
-                const Divider(),
-                const SizedBox(
-                  height: 10,
-                ),
-                InkWell(
-                  child: Container(
-                      padding: const EdgeInsets.symmetric(vertical: 5),
-                      width: double.infinity,
-                      child:const Text("Termos & Conditions",),),
-                  onTap: () {},
-                ),
-                const Divider(),
-                const SizedBox(
-                  height: 10,
-                ),
-                InkWell(
-                  child: Container(
-                      padding: const EdgeInsets.symmetric(vertical: 5),
-                      width: double.infinity,
-                      child: const Text(
-                        "Settings",
-                          style: TextStyle(
-                             fontSize: 20,
-                            color: Colors.black,
-                        ),
-                      ),),
-                  onTap: () {},
-                ),
-              ],
-            ),
-          ),
-        ),
+        drawer: CustonDrawer(),
         body: Column(
           children: [
             Expanded(

@@ -45,7 +45,7 @@ class CustonDrawer extends StatelessWidget {
                   child: Image.network(
                       "https://hermes.digitalinnovation.one/assets/diome/logo.png"),
                 ),
-                accountName: const Text("Danilo Perez"),
+                accountName: const Text("Stoberton Francisco"),
                 accountEmail: const Text("email@email.com")),
           ),
           InkWell(
@@ -59,7 +59,7 @@ class CustonDrawer extends StatelessWidget {
                     SizedBox(
                       width: 5,
                     ),
-                    Text("Dados cadastráis"),
+                    Text("Dados cadastrais"),
                   ],
                 )),
             onTap: () {
