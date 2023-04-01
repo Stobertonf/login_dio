@@ -67,7 +67,7 @@ class CustonDrawer extends StatelessWidget {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => const DadosCadastraisPage(dados: [], texto: '',)));
+                      builder: (context) => const DadosCadastraisPage()));
             },
           ),
           const Divider(),
