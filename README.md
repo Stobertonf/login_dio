@@ -18,7 +18,7 @@
 
 ## Prazo
 
-⚡ Este projeto foi iniciado no dia 01/04/2023. Agora é necessário rever o curso pra verificar se acabei deixando passar alguma informação importante e corrigir possíveis erros.
+⚡ Este projeto foi finalizado no dia 01/04/2023. Agora é necessário rever o curso pra verificar se acabei deixando passar alguma informação importante e corrigir possíveis erros.
 
 ## Imagens
 
