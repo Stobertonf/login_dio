@@ -9,8 +9,8 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  var emailController = TextEditingController(text: "email@email.com");
-  var senhaController = TextEditingController(text: "123");
+  var emailController = TextEditingController(text: "");
+  var senhaController = TextEditingController(text: "");
   bool isObscureText = true;
 
   @override
@@ -161,7 +161,8 @@ class _LoginPageState extends State<LoginPage> {
                                 RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(10))),
                             backgroundColor: MaterialStateProperty.all(
-                                const Color.fromARGB(255, 141, 79, 151))),
+                                const Color.fromARGB(255, 141, 79, 151),
+                                ),),
                         child: const Text(
                           "ENTRAR",
                           style: TextStyle(
@@ -169,7 +170,7 @@ class _LoginPageState extends State<LoginPage> {
                               fontSize: 16,
                               fontWeight: FontWeight.w400,
                               ),
-                        ),),
+                        )),
                   ),
                 ),
                 Expanded(child: Container()),
@@ -180,7 +181,8 @@ class _LoginPageState extends State<LoginPage> {
                   child: const Text(
                     "Esqueci minha senha",
                     style: TextStyle(
-                        color: Colors.yellow, fontWeight: FontWeight.w400),
+                        color: Colors.yellow, 
+                        fontWeight: FontWeight.w400,),
                   ),
                 ),
                 Container(
@@ -190,7 +192,8 @@ class _LoginPageState extends State<LoginPage> {
                   child: const Text(
                     "Criar conta",
                     style: TextStyle(
-                        color: Colors.green, fontWeight: FontWeight.w400,
+                        color: Colors.green, 
+                        fontWeight: FontWeight.w400,
                         ),
                   ),
                 ),
