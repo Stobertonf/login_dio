@@ -46,7 +46,7 @@ class CustonDrawer extends StatelessWidget {
                       "https://hermes.digitalinnovation.one/assets/diome/logo.png"),
                 ),
                 accountName: const Text("Stoberton Francisco"),
-                accountEmail: const Text("email@email.com")),
+                accountEmail: const Text("stoberton@smfsystems.com.br")),
           ),
           InkWell(
             child: Container(
