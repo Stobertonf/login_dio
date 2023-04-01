@@ -1,14 +1,14 @@
 import 'package:login_dio_flutter/models/task.dart';
 
-class TaskRepository {
+class TasksRepository {
   final List<Task> _tasks = [];
 
-  Future<void> adicionat(Task tarefa) async {
+  Future<void> add(Task tarefa) async {
     await Future.delayed(const Duration(milliseconds: 100));
     _tasks.add(tarefa);
   }
 
-  Future<void> alterar(String id, bool concluido) async {
+  Future<void> change(String id, bool concluido) async {
     await Future.delayed(const Duration(milliseconds: 100));
     _tasks.where((tarefa) => tarefa.id == id).first.concluido = concluido;
   }
