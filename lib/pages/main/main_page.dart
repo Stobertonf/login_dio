@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:login_dio_flutter/pages/lists/list_view.dart';
+import 'package:login_dio_flutter/pages/tasks/tasks_page.dart';
+import 'package:login_dio_flutter/pages/lists/list_view_horizontal.dart';
+import 'package:login_dio_flutter/pages/registration/image_assets.dart';
 
 
 class MainPage extends StatefulWidget {
@@ -7,6 +11,7 @@ class MainPage extends StatefulWidget {
   @override
   State<MainPage> createState() => _MainPageState();
 }
+
 
 class _MainPageState extends State<MainPage> {
   PageController controller = PageController(initialPage: 0);
@@ -82,36 +87,31 @@ class _MainPageState extends State<MainPage> {
                     posicaoPagina = value;
                   });
                 },
-                children:  [
-                  Container(
-                    width: 100,
-                    height: 100,
-                    color: Colors. red
-                  ),
-                  Container(
-                     width: 100,
-                    height: 100,
-                    color: Colors. black
-                  ),
-                  Container( 
-                    width: 100,
-                    height: 100,
-                    color: Colors. blue),
+                children:  const [
+                  ImageAssetsPage(),
+                  ListViewPage(),
+                  ListViewHorizontal(),
+                  TaskPage()
                 ],
               ),
             ),
-            BottomNavigationBar(
+             BottomNavigationBar(
+                type: BottomNavigationBarType.fixed,
                 onTap: (value) {
                   controller.jumpToPage(value);
                 },
                 currentIndex: posicaoPagina,
-                items:const [
+                items: const [
                   BottomNavigationBarItem(
-                      label: "Pag1", icon: Icon(Icons.home),),
-                  BottomNavigationBarItem(label: "Pag2", icon: Icon(Icons.add),),
+                      label: "Home", icon: Icon(Icons.home)),
+                  BottomNavigationBarItem(label: "Users", icon: Icon(Icons.person)),
                   BottomNavigationBarItem(
-                      label: "Pag3", icon: Icon(Icons.person),)
-                ],),
+                      label: "Photos", icon: Icon(Icons.camera)),
+                  BottomNavigationBarItem(
+                      label: "Pag4", icon: Icon(Icons.image)),
+                  BottomNavigationBarItem(
+                      label: "Tasks", icon: Icon(Icons.list))
+                ]),
           ],
         ),
       ),
