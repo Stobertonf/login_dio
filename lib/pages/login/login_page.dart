@@ -9,7 +9,7 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  var emailController = TextEditingController(text: "email@email.com");
+  var emailController = TextEditingController(text: "stoberton@smfsystems.com.br");
   var senhaController = TextEditingController(text: "123");
   bool isObscureText = true;
 
@@ -45,7 +45,7 @@ class _LoginPageState extends State<LoginPage> {
                   height: 20,
                 ),
                 const Text(
-                  "Ja tem cadastro?",
+                  "Don't Have An Account?",
                   style: TextStyle(
                       fontSize: 26,
                       fontWeight: FontWeight.w700,
@@ -55,7 +55,7 @@ class _LoginPageState extends State<LoginPage> {
                   height: 10,
                 ),
                 const Text(
-                  "Faça seu login e make the change_",
+                  "Don't Just A Dream, Do.",
                   style: TextStyle(fontSize: 14, color: Colors.white),
                 ),
                 const SizedBox(
@@ -144,7 +144,7 @@ class _LoginPageState extends State<LoginPage> {
                     child: TextButton(
                         onPressed: () {
                           if (emailController.text.trim() ==
-                                  "email@email.com" &&
+                                  "stoberton@smfsystems.com.br" &&
                               senhaController.text.trim() == "123") {
                             Navigator.pushReplacement(
                                 context,
@@ -163,10 +163,10 @@ class _LoginPageState extends State<LoginPage> {
                             backgroundColor: MaterialStateProperty.all(
                                 const Color.fromARGB(255, 141, 79, 151))),
                         child: const Text(
-                          "ENTRAR",
+                          "SIGN IN",
                           style: TextStyle(
-                              color: Colors.white,
                               fontSize: 16,
+                              color: Colors.white,
                               fontWeight: FontWeight.w400,
                               ),
                         ),),
@@ -178,9 +178,11 @@ class _LoginPageState extends State<LoginPage> {
                   height: 30,
                   alignment: Alignment.center,
                   child: const Text(
-                    "Esqueci minha senha",
+                    "Forgot My Password",
                     style: TextStyle(
-                        color: Colors.yellow, fontWeight: FontWeight.w400),
+                          color: Colors.yellow, 
+                          fontWeight: FontWeight.w400
+                        ),
                   ),
                 ),
                 Container(
@@ -188,9 +190,10 @@ class _LoginPageState extends State<LoginPage> {
                   height: 30,
                   alignment: Alignment.center,
                   child: const Text(
-                    "Criar conta",
+                    "Create Account",
                     style: TextStyle(
-                        color: Colors.green, fontWeight: FontWeight.w400,
+                        color: Colors.green, 
+                        fontWeight: FontWeight.w400,
                         ),
                   ),
                 ),
