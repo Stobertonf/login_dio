@@ -45,8 +45,8 @@ class CustonDrawer extends StatelessWidget {
                   child: Image.network(
                       "https://hermes.digitalinnovation.one/assets/diome/logo.png"),
                 ),
-                accountName: const Text("Danilo Perez"),
-                accountEmail: const Text("email@email.com")),
+                accountName: const Text("Stoberton Francisco"),
+                accountEmail: const Text("stoberton@smfsystems.com.br")),
           ),
           InkWell(
             child: Container(
@@ -59,7 +59,7 @@ class CustonDrawer extends StatelessWidget {
                     SizedBox(
                       width: 5,
                     ),
-                    Text("Dados cadastráis"),
+                    Text("Dados cadastrais"),
                   ],
                 )),
             onTap: () {
@@ -67,7 +67,7 @@ class CustonDrawer extends StatelessWidget {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => const DadosCadastraisPage(dados: [], texto: '',)));
+                      builder: (context) => const DadosCadastraisPage()));
             },
           ),
           const Divider(),
