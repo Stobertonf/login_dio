@@ -1,36 +1,63 @@
 import 'package:flutter/material.dart';
-import 'package:login_dio_flutter/shared/text-Label.dart';
+import 'package:login_dio_flutter/shared/widgets/text-Label.dart';
+import 'package:login_dio_flutter/services/app_storage_service.dart';
 import 'package:login_dio_flutter/repositories/levels_repository.dart';
 import 'package:login_dio_flutter/repositories/languages_repository.dart';
 
 
 class DadosCadastraisPage extends StatefulWidget {
-  const DadosCadastraisPage({Key? key}) : super(key: key);
+  const DadosCadastraisPage({Key? key,  List? dados}) : super(key: key);
 
   @override
   State<DadosCadastraisPage> createState() => _DadosCadastraisPageState();
 }
 
 class _DadosCadastraisPageState extends State<DadosCadastraisPage> {
-  var nomeController = TextEditingController(text: "");
-  var dataNacimentoController = TextEditingController(text: "");
-  DateTime? dataNascimento;
-  var levelsRepository = LevelsRepository();
-  var linguagensRepository = LanguagesRepository();
-  var levels = [];
+  var niveis  = [];
   var linguagens = [];
-  var linguagensSelecionadas = [];
-  var nivelSelecionado = "";
-  double salarioEscolhido = 0;
-  int tempoExperiencia = 0;
-
   bool salvando = false;
+  DateTime? dataNascimento;
+  var nivelSelecionado = "";
+  int tempoExperiencia = 0;
+  double salarioEscolhido = 0;
+  var levelRepository = NivelRepository();
+  List<String> linguagensSelecionadas = [];
+  var nomeController = TextEditingController(text: "");
+  AppStorageService storage = AppStorageService();
+  var linguagensRepository = LinguagensRepository();
+  var dataNacimentoController = TextEditingController(text: "");
+  final String CHAVE_DADOS_CADASTRAIS_NOME = "CHAVE_DADOS_CADASTRAIS_NOME";
+  final String CHAVE_DADOS_CADASTRAIS_DATA_NASCIMENTO =
+      "CHAVE_DADOS_CADASTRAIS_DATA_NASCIMENTO";
+  final String CHAVE_DADOS_CADASTRAIS_NIVEL_EXPERIENCIA =
+      "CHAVE_DADOS_CADASTRAIS_NIVEL_EXPERIENCIA";
+  final String CHAVE_DADOS_CADASTRAIS_LINGUAGENS =
+      "CHAVE_DADOS_CADASTRAIS_LINGUAGENS";
+  final String CHAVE_DADOS_CADASTRAIS_TEMPO_EXPERIENCIA =
+      "CHAVE_DADOS_CADASTRAIS_TEMPO_EXPERIENCIA";
+  final String CHAVE_DADOS_CADASTRAIS_SALARIO =
+      "CHAVE_DADOS_CADASTRAIS_SALARIO";
 
-  @override
+ @override
   void initState() {
-    levels = levelsRepository.returnLevels();
-    linguagens = linguagensRepository.returnLanguages();
+    niveis = levelRepository.retornaNiveis();
+    linguagens = linguagensRepository.retornaLinguagens();
     super.initState();
+    carregarDados();
+  }
+
+  carregarDados() async {
+    nomeController.text = await storage.getDadosCadastraisNome();
+    dataNacimentoController.text =
+        await storage.getDadosCadastraisDataNascimento();
+    if (dataNacimentoController.text.isNotEmpty) {
+      dataNascimento = DateTime.parse(dataNacimentoController.text);
+    }
+    nivelSelecionado = await storage.getDadosCadastraisNivelExperiencia();
+    linguagensSelecionadas = await storage.getDadosCadastraisLinguagens();
+    tempoExperiencia = await storage.getDadosCadastraisTempoExperiencia();
+    salarioEscolhido = await storage.getDadosCadastraisSalario();
+    setState(() {});
   }
 
   List<DropdownMenuItem<int>> returnItens(int quantidadeMaxima) {
@@ -65,9 +92,9 @@ class _DadosCadastraisPageState extends State<DadosCadastraisPage> {
                       onTap: () async {
                         var data = await showDatePicker(
                             context: context,
-                            initialDate: DateTime(1990, 1, 1),
-                            firstDate: DateTime(1990, 1, 1),
-                            lastDate: DateTime(2023, 31, 12));
+                            initialDate: DateTime(2000, 1, 1),
+                            firstDate: DateTime(1900, 5, 20),
+                            lastDate: DateTime(2023, 10, 23));
                         if (data != null) {
                           dataNacimentoController.text = data.toString();
                           dataNascimento = data;
@@ -75,7 +102,7 @@ class _DadosCadastraisPageState extends State<DadosCadastraisPage> {
                       }),
                   const TextLabel(texto: "Nivel de experiência"),
                   Column(
-                      children: levels
+                      children: niveis
                           .map((nivel) => RadioListTile(
                               dense: true,
                               title: Text(nivel.toString()),
@@ -132,7 +159,7 @@ class _DadosCadastraisPageState extends State<DadosCadastraisPage> {
                         });
                       }),
                   TextButton(
-                    onPressed: () {
+                    onPressed: () async {
                       setState(() {
                         salvando = false;
                       });
@@ -172,6 +199,17 @@ class _DadosCadastraisPageState extends State<DadosCadastraisPage> {
                                 "A pretenção salarial deve ser maior que 0")));
                         return;
                       }
+
+                      await storage.setDadosCadastraisNome(nomeController.text);
+                      await storage
+                          .setDadosCadastraisDataNascimento(dataNascimento!);
+                      await storage
+                          .setDadosCadastraisNivelExperiencia(nivelSelecionado);
+                      await storage
+                          .setDadosCadastraisLinguagens(linguagensSelecionadas);
+                      await storage
+                          .setDadosCadastraisTempoExperiencia(tempoExperiencia);
+                      await storage.setDadosCadastraisSalario(salarioEscolhido);
 
                       setState(() {
                         salvando = true;
