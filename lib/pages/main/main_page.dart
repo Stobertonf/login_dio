@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:login_dio_flutter/pages/lists/list_view.dart';
 import 'package:login_dio_flutter/pages/tasks/tasks_page.dart';
-import 'package:login_dio_flutter/pages/lists/list_view_horizontal.dart';
 import 'package:login_dio_flutter/pages/registration/image_assets.dart';
-import 'package:login_dio_flutter/shared/custon_drawer.dart';
+import 'package:login_dio_flutter/pages/lists/list_view_horizontal.dart';
+import 'package:login_dio_flutter/shared/widgets/drawer/custom_drawer.dart';
 
 
 class MainPage extends StatefulWidget {
@@ -24,7 +24,7 @@ class _MainPageState extends State<MainPage> {
         appBar: AppBar(
           title: const Text("Main Page"),
         ),
-        drawer: CustonDrawer(),
+        drawer: CustomDrawer(),
         body: Column(
           children: [
             Expanded(

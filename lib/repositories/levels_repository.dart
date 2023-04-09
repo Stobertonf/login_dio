@@ -1,5 +1,5 @@
-class LevelsRepository {
-  List<String> returnLevels() {
+class NivelRepository  {
+  List<String> retornaNiveis() {
     return ["Júnior", "Pleno", "Sênior", "Specialist"];
   }
 }
