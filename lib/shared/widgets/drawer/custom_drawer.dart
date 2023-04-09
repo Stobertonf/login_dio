@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:login_dio_flutter/pages/login/login_page.dart';
+import 'package:login_dio_flutter/pages/config/random_numbers.dart';
+import 'package:login_dio_flutter/pages/config/configuration_page.dart';
 import 'package:login_dio_flutter/pages/registration/dados_cadastrais.dart';
 
-class CustonDrawer extends StatelessWidget {
-  const CustonDrawer({Key? key}) : super(key: key);
+class CustomDrawer extends StatelessWidget {
+  const CustomDrawer({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +48,7 @@ class CustonDrawer extends StatelessWidget {
                       "https://hermes.digitalinnovation.one/assets/diome/logo.png"),
                 ),
                 accountName: const Text("Stoberton Francisco"),
-                accountEmail: const Text("stoberton@smfsystems.com.br")),
+                accountEmail: const Text("email@email.com")),
           ),
           InkWell(
             child: Container(
@@ -67,7 +69,7 @@ class CustonDrawer extends StatelessWidget {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => const DadosCadastraisPage()));
+                      builder: (context) => const DadosCadastraisPage(dados: [], texto: '',)));
             },
           ),
           const Divider(),
@@ -136,12 +138,36 @@ class CustonDrawer extends StatelessWidget {
                     Text("Configurações"),
                   ],
                 )),
-            onTap: () {},
+             onTap: () {
+              Navigator.pop(context);
+              Navigator.push(context, MaterialPageRoute(builder: (bc)=> const ConfigurationPage()));
+            },
           ),
+          
           const Divider(),
           const SizedBox(
             height: 10,
           ),
+          InkWell(
+            child: Container(
+                padding:
+                    const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                width: double.infinity,
+                child: Row(
+                  children: const [
+                    Icon(Icons.numbers),
+                    SizedBox(
+                      width: 5,
+                    ),
+                    Text("Gerador de Números"),
+                  ],
+                )),
+            onTap: () {
+              Navigator.pop(context);
+              Navigator.push(context, MaterialPageRoute(builder: (bc)=> const RandomNumbers()));
+            },
+          ),
+          const Divider(),
           InkWell(
             child: Container(
                 padding:
