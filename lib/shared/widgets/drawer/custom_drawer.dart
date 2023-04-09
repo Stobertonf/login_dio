@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:login_dio_flutter/pages/login/login_page.dart';
-import 'package:login_dio_flutter/pages/config/randon_numbers.dart';
+import 'package:login_dio_flutter/pages/config/random_numbers.dart';
 import 'package:login_dio_flutter/pages/config/configuration_page.dart';
 import 'package:login_dio_flutter/pages/registration/dados_cadastrais.dart';
 
-class CustonDrawer extends StatelessWidget {
-  const CustonDrawer({Key? key}) : super(key: key);
+class CustomDrawer extends StatelessWidget {
+  const CustomDrawer({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
