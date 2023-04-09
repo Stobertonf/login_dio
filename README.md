@@ -18,7 +18,7 @@
 
 ## Prazo
 
-⚡ Este projeto foi finalizado no dia 01/04/2023. Agora é necessário rever o curso pra verificar se acabei deixando passar alguma informação importante e corrigir possíveis erros.
+⚡ Este módulo foi finalizado no dia 01/04/2023. Agora é necessário rever o curso pra verificar se acabei deixando passar alguma informação importante e corrigir possíveis erros. Caso não possua erros, irei seguir com o módulo de Persistência de dados com SQLite.
 
 ## Imagens
 
