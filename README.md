@@ -10,11 +10,11 @@
 
 ## Escopo
 
-📚 Neste projeto, eu vou ter a oportunidade de fazer um app com uma Tela de Login, Drawer, PageView e navegação.
+📚 Neste projeto, eu vou ter a oportunidade de fazer um app com uma Tela de Login, Drawer, PageView, Navegação, armazenar dados no Hive, Shared Preferences e SQLite. 
 
 ## Foco
 
-😊 O curso é focado em desenvolver um App com uma tela de login.
+😊 O curso é focado em desenvolver um App completo, com tela de cadastro, salvando dados locais entre outras funcionalidaes.
 
 ## Prazo
 
