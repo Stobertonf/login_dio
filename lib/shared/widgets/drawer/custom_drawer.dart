@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:login_dio_flutter/pages/login/login_page.dart';
 import 'package:login_dio_flutter/pages/config/random_numbers.dart';
 import 'package:login_dio_flutter/pages/registration/dados_cadastrais.dart';
+import 'package:login_dio_flutter/pages/hive/configuration_page_hive_page.dart';
 
 class CustomDrawer extends StatelessWidget {
   const CustomDrawer({Key? key}) : super(key: key);
@@ -120,10 +121,11 @@ class CustomDrawer extends StatelessWidget {
             },
           ),
 
-           const Divider(),
+          const Divider(),
           const SizedBox(
             height: 10,
           ),
+          /*
           InkWell(
             child: Container(
                 padding:
@@ -144,6 +146,34 @@ class CustomDrawer extends StatelessWidget {
                   context,
                   MaterialPageRoute(
                       builder: (bc) => const RandomNumbers()));
+            },
+          ),
+          const Divider(),
+          const SizedBox(
+            height: 10,
+          ),
+          */
+          //Hive
+          InkWell(
+            child: Container(
+                padding:
+                    const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                width: double.infinity,
+                child: Row(
+                  children: const [
+                    Icon(Icons.numbers),
+                    SizedBox(
+                      width: 5,
+                    ),
+                    Text("Gerador de números"),
+                  ],
+                )),
+            onTap: () {
+              Navigator.pop(context);
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (bc) => const ConfigurationHivePage()));
             },
           ),
           const Divider(),
