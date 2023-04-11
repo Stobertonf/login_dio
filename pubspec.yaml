@@ -36,6 +36,7 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   hive: ^2.2.3
   google_fonts: ^3.0.1
+  path_provider: ^2.0.14
   cupertino_icons: ^1.0.2
   shared_preferences: ^2.1.0
 
