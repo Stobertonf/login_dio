@@ -1,17 +1,17 @@
-class ConfigurationModel {
+class ConfigurantionModel {
   String _nomeUsuario = "";
   double _altura = 0;
   bool _receberNotificacoes = false;
   bool _temaEscuro = false;
 
-  ConfigurationModel.vazio() {
+  ConfigurantionModel.vazio() {
     _nomeUsuario = "";
     _altura = 0;
     _receberNotificacoes = false;
     _temaEscuro = false;
   }
 
-  ConfigurationModel(this._nomeUsuario, this._altura, this._receberNotificacoes,
+  ConfigurantionModel(this._nomeUsuario, this._altura, this._receberNotificacoes,
       this._temaEscuro);
 
   String get nomeUsuario => _nomeUsuario;
