@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:login_dio_flutter/pages/login/login_page.dart';
+import 'package:login_dio_flutter/pages/config/random_numbers.dart';
 import 'package:login_dio_flutter/pages/registration/dados_cadastrais.dart';
 
 class CustomDrawer extends StatelessWidget {
@@ -116,6 +117,33 @@ class CustomDrawer extends StatelessWidget {
                       ),
                     );
                   });
+            },
+          ),
+
+           const Divider(),
+          const SizedBox(
+            height: 10,
+          ),
+          InkWell(
+            child: Container(
+                padding:
+                    const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                width: double.infinity,
+                child: Row(
+                  children: const [
+                    Icon(Icons.numbers),
+                    SizedBox(
+                      width: 5,
+                    ),
+                    Text("Gerador de números"),
+                  ],
+                )),
+            onTap: () {
+              Navigator.pop(context);
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (bc) => const RandomNumbers()));
             },
           ),
           const Divider(),
