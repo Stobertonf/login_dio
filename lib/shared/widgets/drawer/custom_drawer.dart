@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:login_dio_flutter/pages/login/login_page.dart';
-import 'package:login_dio_flutter/pages/config/random_numbers.dart';
+import 'package:login_dio_flutter/pages/random_numbers/random_numbers.dart';
 import 'package:login_dio_flutter/pages/registration/dados_cadastrais.dart';
-import 'package:login_dio_flutter/pages/hive/configuration_page_hive_page.dart';
+import 'package:login_dio_flutter/pages/configuration/configuration_hive_page.dart';
+
 
 class CustomDrawer extends StatelessWidget {
   const CustomDrawer({Key? key}) : super(key: key);
@@ -106,7 +107,7 @@ class CustomDrawer extends StatelessWidget {
                             style: TextStyle(
                                 fontSize: 20, fontWeight: FontWeight.bold),
                           ),
-                          SizedBox(
+                          SizedBox( 
                             height: 20,
                           ),
                           Text(
