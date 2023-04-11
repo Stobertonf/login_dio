@@ -4,14 +4,14 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:login_dio_flutter/services/app_storage_service.dart';
 
-class ConfigurationPage extends StatefulWidget {
-  const ConfigurationPage({super.key});
+class ConfigurationHivePage extends StatefulWidget {
+  const ConfigurationHivePage({super.key});
 
   @override
-  State<ConfigurationPage> createState() => _ConfigurationPageState();
+  State<ConfigurationHivePage> createState() => _ConfigurationHivePageState();
 }
 
-class _ConfigurationPageState extends State<ConfigurationPage> {
+class _ConfigurationHivePageState extends State<ConfigurationHivePage> {
 
 
   AppStorageService storage = AppStorageService();
