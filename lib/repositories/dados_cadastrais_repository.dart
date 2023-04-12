@@ -19,4 +19,12 @@ class DadosCadastraisRepository {
     _box.put('dadosCadastraisModel', dadosCadastraisModel);
   }
 
+   DadosCadastraisModel obterDados() {
+    var dadosCadastraisModel = _box.get('dadosCadastraisModel');
+    if (dadosCadastraisModel == null) {
+      return DadosCadastraisModel.vazio();
+    }
+    return dadosCadastraisModel;
+  }
+
 }
