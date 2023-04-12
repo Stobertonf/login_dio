@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:login_dio_flutter/pages/login/login_page.dart';
 import 'package:login_dio_flutter/pages/random_numbers/random_numbers.dart';
-import 'package:login_dio_flutter/pages/registration/dados_cadastrais.dart';
+import 'package:login_dio_flutter/pages/dados_cadastrais/dados_cadastrais.dart';
 import 'package:login_dio_flutter/pages/configuration/configuration_hive_page.dart';
 
 
