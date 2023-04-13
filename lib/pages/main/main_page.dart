@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:login_dio_flutter/pages/lists/list_view.dart';
-import 'package:login_dio_flutter/pages/tasks/tasks_page.dart';
+import 'package:login_dio_flutter/pages/tasks/task_sqlite_page.dart';
 import 'package:login_dio_flutter/pages/registration/image_assets.dart';
 import 'package:login_dio_flutter/pages/lists/list_view_horizontal.dart';
 import 'package:login_dio_flutter/shared/widgets/drawer/custom_drawer.dart';
@@ -39,7 +39,7 @@ class _MainPageState extends State<MainPage> {
                   ImageAssetsPage(),
                   ListViewPage(),
                   ListViewHorizontal(),
-                  TaskPage()
+                  TaskSQLitePage()
                 ],
               ),
             ),
