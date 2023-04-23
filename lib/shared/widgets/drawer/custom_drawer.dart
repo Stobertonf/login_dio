@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:login_dio_flutter/pages/post/post_page.dart';
 import 'package:login_dio_flutter/pages/login/login_page.dart';
+import 'package:login_dio_flutter/pages/tasks/tasks_page.dart';
+import 'package:login_dio_flutter/pages/config/random_numbers.dart';
 import 'package:login_dio_flutter/pages/registration/dados_cadastrais.dart';
+
 
 class CustomDrawer extends StatelessWidget {
   const CustomDrawer({Key? key}) : super(key: key);
@@ -9,8 +12,8 @@ class CustomDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+      child: ListView(
+        //crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           InkWell(
             onTap: () {
@@ -60,10 +63,10 @@ class CustomDrawer extends StatelessWidget {
                     SizedBox(
                       width: 5,
                     ),
-                    Text("Dados cadastrais"),
+                    Text("Dados cadastráis"),
                   ],
                 )),
-              onTap: () {
+            onTap: () {
               Navigator.pop(context);
               Navigator.push(
                   context,
@@ -121,6 +124,59 @@ class CustomDrawer extends StatelessWidget {
                   });
             },
           ),
+          const Divider(),
+          const SizedBox(
+            height: 10,
+          ),
+          InkWell(
+            child: Container(
+                padding:
+                    const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                width: double.infinity,
+                child: Row(
+                  children: const [
+                    Icon(Icons.numbers),
+                    SizedBox(
+                      width: 5,
+                    ),
+                    Text("Gerador de números"),
+                  ],
+                )),
+            onTap: () {
+              Navigator.pop(context);
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (bc) => const RandomNumbers()));
+            },
+          ),
+          const Divider(),
+          const SizedBox(
+            height: 10,
+          ),
+          InkWell(
+            child: Container(
+                padding:
+                    const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                width: double.infinity,
+                child: Row(
+                  children: const [
+                    Icon(Icons.album),
+                    SizedBox(
+                      width: 5,
+                    ),
+                    Text("Configurações"),
+                  ],
+                )),
+            onTap: () {
+              Navigator.pop(context);
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (bc) => const RandomNumbers()));
+            },
+          ),
+          const Divider(),
           const SizedBox(
             height: 10,
           ),
@@ -165,7 +221,6 @@ class CustomDrawer extends StatelessWidget {
             onTap: () async {
               Navigator.pop(context);
               Navigator.push(context,
-              //CharactersPage
                   MaterialPageRoute(builder: (bc) => const PostsPage()));
             },
           ),
@@ -190,33 +245,8 @@ class CustomDrawer extends StatelessWidget {
             onTap: () async {
               Navigator.pop(context);
               Navigator.push(context,
-               //TarefaHttpPage
-                  MaterialPageRoute(builder: (bc) => const PostsPage()));
+                  MaterialPageRoute(builder: (bc) => const TaskPage()));
             },
-          ),
-          const Divider(),
-          const SizedBox(
-            height: 10,
-          ),
-          const Divider(),
-          const SizedBox(
-            height: 10,
-          ),
-          InkWell(
-            child: Container(
-                padding:
-                    const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-                width: double.infinity,
-                child: Row(
-                  children: const [
-                    Icon(Icons.album),
-                    SizedBox(
-                      width: 5,
-                    ),
-                    Text("Configurações"),
-                  ],
-                )),
-            onTap: () {},
           ),
           const Divider(),
           const SizedBox(
@@ -240,36 +270,38 @@ class CustomDrawer extends StatelessWidget {
               showDialog(
                   context: context,
                   builder: (BuildContext bc) {
-                    return AlertDialog(
-                      alignment: Alignment.centerLeft,
-                      elevation: 8,
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10)),
-                      title: const Text(
-                        "Meu App",
-                        style: TextStyle(fontWeight: FontWeight.bold),
-                      ),
-                      content: Wrap(
-                        children: const [
-                          Text("Voce sairá do aplicativo!"),
-                          Text("Deseja realmente sair do aplicativo?"),
+                    return Container(
+                      child: AlertDialog(
+                        alignment: Alignment.centerLeft,
+                        elevation: 8,
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10)),
+                        title: const Text(
+                          "Meu App",
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                        content: Wrap(
+                          children: const [
+                            Text("Voce sairá do aplicativo!"),
+                            Text("Deseja realmente sair do aplicativo?"),
+                          ],
+                        ),
+                        actions: [
+                          TextButton(
+                              onPressed: () {
+                                Navigator.pop(context);
+                              },
+                              child: const Text("Não")),
+                          TextButton(
+                              onPressed: () {
+                                Navigator.pushReplacement(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => const LoginPage()));
+                              },
+                              child: const Text("Sim"))
                         ],
                       ),
-                      actions: [
-                        TextButton(
-                            onPressed: () {
-                              Navigator.pop(context);
-                            },
-                            child: const Text("Não")),
-                        TextButton(
-                            onPressed: () {
-                              Navigator.pushReplacement(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => const LoginPage()));
-                            },
-                            child: const Text("Sim"))
-                      ],
                     );
                   });
             },
