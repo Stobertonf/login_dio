@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:login_dio_flutter/pages/post/post_page.dart';
 import 'package:login_dio_flutter/pages/login/login_page.dart';
 import 'package:login_dio_flutter/pages/registration/dados_cadastrais.dart';
 
@@ -67,7 +68,7 @@ class CustomDrawer extends StatelessWidget {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) =>  DadosCadastraisPage()));
+                      builder: (context) => const DadosCadastraisPage()));
             },
           ),
           const Divider(),
@@ -119,6 +120,83 @@ class CustomDrawer extends StatelessWidget {
                     );
                   });
             },
+          ),
+          const SizedBox(
+            height: 10,
+          ),
+          InkWell(
+            child: Container(
+                padding:
+                    const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                width: double.infinity,
+                child: Row(
+                  children: const [
+                    Icon(Icons.post_add),
+                    SizedBox(
+                      width: 5,
+                    ),
+                    Text("Posts"),
+                  ],
+                )),
+            onTap: () {
+              Navigator.pop(context);
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (bc) => const PostsPage()));
+            },
+          ),
+          const Divider(),
+          const SizedBox(
+            height: 10,
+          ),
+          InkWell(
+            child: Container(
+                padding:
+                    const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                width: double.infinity,
+                child: Row(
+                  children: const [
+                    Icon(Icons.help),
+                    SizedBox(
+                      width: 5,
+                    ),
+                    Text("Herois"),
+                  ],
+                )),
+            onTap: () async {
+              Navigator.pop(context);
+              Navigator.push(context,
+              //CharactersPage
+                  MaterialPageRoute(builder: (bc) => const PostsPage()));
+            },
+          ),
+          const Divider(),
+          const SizedBox(
+            height: 10,
+          ),
+          InkWell(
+            child: Container(
+                padding:
+                    const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                width: double.infinity,
+                child: Row(
+                  children: const [
+                    Icon(Icons.help),
+                    SizedBox(
+                      width: 5,
+                    ),
+                    Text("Tarefas HTTP"),
+                  ],
+                )),
+            onTap: () async {
+              Navigator.pop(context);
+              Navigator.push(context,
+               //TarefaHttpPage
+                  MaterialPageRoute(builder: (bc) => const PostsPage()));
+            },
+          ),
+          const Divider(),
+          const SizedBox(
+            height: 10,
           ),
           const Divider(),
           const SizedBox(
