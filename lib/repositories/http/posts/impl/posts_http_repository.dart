@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:login_dio_flutter/models/post_model.dart';
-import 'package:login_dio_flutter/repositories/posts/posts_repository.dart';
+import 'package:login_dio_flutter/repositories/http/posts/posts_repository.dart';
 
 class PostsHttpRepository implements PostsRepository {
   @override

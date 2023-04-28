@@ -1,5 +1,5 @@
 import 'package:login_dio_flutter/models/post_model.dart';
-import 'package:login_dio_flutter/repositories/posts/posts_repository.dart';
+import 'package:login_dio_flutter/repositories/http/posts/posts_repository.dart';
 import 'package:login_dio_flutter/repositories/jsonplaceholder_custon_dio.dart';
 
 class PostsDioRepository implements PostsRepository {

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:login_dio_flutter/models/post_model.dart';
 import 'package:login_dio_flutter/pages/comments/comments_page.dart';
-import 'package:login_dio_flutter/repositories/posts/posts_repository.dart';
-import 'package:login_dio_flutter/repositories/posts/impl/posts_dio_repository.dart';
+import 'package:login_dio_flutter/repositories/http/posts/posts_repository.dart';
+import 'package:login_dio_flutter/repositories/http/posts/impl/posts_dio_repository.dart';
 
 
 class PostsPage extends StatefulWidget {
