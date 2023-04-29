@@ -37,6 +37,14 @@ class _CharactersPagePageState extends State<CharactersPage> {
     }
   }
 
+  int retornaQuantidadeAtual() {
+    try {
+      return offset + characters.data!.count!;
+    } catch (e) {
+      return 0;
+    }
+  }
+
   carregarDados() async {
     if (carregando) return;
     if (characters.data == null || characters.data!.results == null) {
