@@ -3,8 +3,8 @@ import 'package:login_dio_flutter/pages/post/post_page.dart';
 import 'package:login_dio_flutter/pages/login/login_page.dart';
 import 'package:login_dio_flutter/pages/tasks/tasks_page.dart';
 import 'package:login_dio_flutter/pages/config/random_numbers.dart';
+import 'package:login_dio_flutter/pages/characters/characters_page.dart';
 import 'package:login_dio_flutter/pages/registration/dados_cadastrais.dart';
-
 
 class CustomDrawer extends StatelessWidget {
   const CustomDrawer({Key? key}) : super(key: key);
@@ -57,8 +57,8 @@ class CustomDrawer extends StatelessWidget {
                 padding:
                     const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
                 width: double.infinity,
-                child: Row(
-                  children: const [
+                child: const Row(
+                  children: [
                     Icon(Icons.person),
                     SizedBox(
                       width: 5,
@@ -83,8 +83,8 @@ class CustomDrawer extends StatelessWidget {
                 padding:
                     const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
                 width: double.infinity,
-                child: Row(
-                  children: const [
+                child: const Row(
+                  children: [
                     Icon(Icons.info),
                     SizedBox(
                       width: 5,
@@ -102,8 +102,8 @@ class CustomDrawer extends StatelessWidget {
                       child: Container(
                         padding: const EdgeInsets.symmetric(
                             vertical: 16, horizontal: 12),
-                        child: Column(
-                          children: const [
+                        child: const Column(
+                          children: [
                             Text(
                               "Termos de uso e privacidade",
                               style: TextStyle(
@@ -133,8 +133,8 @@ class CustomDrawer extends StatelessWidget {
                 padding:
                     const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
                 width: double.infinity,
-                child: Row(
-                  children: const [
+                child: const Row(
+                  children: [
                     Icon(Icons.numbers),
                     SizedBox(
                       width: 5,
@@ -144,10 +144,8 @@ class CustomDrawer extends StatelessWidget {
                 )),
             onTap: () {
               Navigator.pop(context);
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (bc) => const RandomNumbers()));
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (bc) => const RandomNumbers()));
             },
           ),
           const Divider(),
@@ -159,8 +157,8 @@ class CustomDrawer extends StatelessWidget {
                 padding:
                     const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
                 width: double.infinity,
-                child: Row(
-                  children: const [
+                child: const Row(
+                  children: [
                     Icon(Icons.album),
                     SizedBox(
                       width: 5,
@@ -170,10 +168,8 @@ class CustomDrawer extends StatelessWidget {
                 )),
             onTap: () {
               Navigator.pop(context);
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (bc) => const RandomNumbers()));
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (bc) => const RandomNumbers()));
             },
           ),
           const Divider(),
@@ -185,8 +181,8 @@ class CustomDrawer extends StatelessWidget {
                 padding:
                     const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
                 width: double.infinity,
-                child: Row(
-                  children: const [
+                child: const Row(
+                  children: [
                     Icon(Icons.post_add),
                     SizedBox(
                       width: 5,
@@ -209,8 +205,8 @@ class CustomDrawer extends StatelessWidget {
                 padding:
                     const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
                 width: double.infinity,
-                child: Row(
-                  children: const [
+                child: const Row(
+                  children: [
                     Icon(Icons.help),
                     SizedBox(
                       width: 5,
@@ -221,7 +217,7 @@ class CustomDrawer extends StatelessWidget {
             onTap: () async {
               Navigator.pop(context);
               Navigator.push(context,
-                  MaterialPageRoute(builder: (bc) => const PostsPage()));
+                  MaterialPageRoute(builder: (bc) => const CharactersPage()));
             },
           ),
           const Divider(),
@@ -233,8 +229,8 @@ class CustomDrawer extends StatelessWidget {
                 padding:
                     const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
                 width: double.infinity,
-                child: Row(
-                  children: const [
+                child: const Row(
+                  children: [
                     Icon(Icons.help),
                     SizedBox(
                       width: 5,
@@ -257,8 +253,8 @@ class CustomDrawer extends StatelessWidget {
                 padding:
                     const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
                 width: double.infinity,
-                child: Row(
-                  children: const [
+                child: const Row(
+                  children: [
                     Icon(Icons.exit_to_app),
                     SizedBox(
                       width: 5,
@@ -280,8 +276,8 @@ class CustomDrawer extends StatelessWidget {
                           "Meu App",
                           style: TextStyle(fontWeight: FontWeight.bold),
                         ),
-                        content: Wrap(
-                          children: const [
+                        content: const Wrap(
+                          children: [
                             Text("Voce sairá do aplicativo!"),
                             Text("Deseja realmente sair do aplicativo?"),
                           ],
@@ -297,7 +293,8 @@ class CustomDrawer extends StatelessWidget {
                                 Navigator.pushReplacement(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (context) => const LoginPage()));
+                                        builder: (context) =>
+                                            const LoginPage()));
                               },
                               child: const Text("Sim"))
                         ],
