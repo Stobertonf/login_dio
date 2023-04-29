@@ -21,12 +21,28 @@ class _CharactersPagePageState extends State<CharactersPage> {
       var posicaoParaPaginar = _scrollController.position.maxScrollExtent * 0.7;
       if (_scrollController.position.pixels > posicaoParaPaginar) {
         print("Carregando página");
-        //Função que vai carregar os dados
+        carregarDados();
       }
     });
     marvelRepository = MarvelRepository();
     super.initState();
-    //Função que vai carregar os dados
+    carregarDados();
+  }
+
+  carregarDados() async {
+    if (carregando) return;
+    if (characters.data == null || characters.data!.results == null) {
+      characters = await marvelRepository.getCharacters(offset);
+    } else {
+      setState(() {
+        carregando = true;
+      });
+      offset = offset + characters.data!.count!;
+      var tempList = await marvelRepository.getCharacters(offset);
+      characters.data!.results!.addAll(tempList.data!.results!);
+      carregando = false;
+    }
+    setState(() {});
   }
 
   @override
