@@ -29,6 +29,14 @@ class _CharactersPagePageState extends State<CharactersPage> {
     carregarDados();
   }
 
+  int retornaQuantidadeTotal() {
+    try {
+      return characters.data!.total!;
+    } catch (e) {
+      return 0;
+    }
+  }
+
   carregarDados() async {
     if (carregando) return;
     if (characters.data == null || characters.data!.results == null) {
