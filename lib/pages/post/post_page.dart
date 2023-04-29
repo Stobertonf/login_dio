@@ -4,7 +4,6 @@ import 'package:login_dio_flutter/pages/comments/comments_page.dart';
 import 'package:login_dio_flutter/repositories/http/posts/posts_repository.dart';
 import 'package:login_dio_flutter/repositories/http/posts/impl/posts_dio_repository.dart';
 
-
 class PostsPage extends StatefulWidget {
   const PostsPage({Key? key}) : super(key: key);
 
@@ -50,7 +49,8 @@ class _PostsPageState extends State<PostsPage> {
                 margin: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                 child: Card(
                   child: Container(
-                    padding:const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -59,7 +59,7 @@ class _PostsPageState extends State<PostsPage> {
                           style: const TextStyle(
                               fontSize: 16, fontWeight: FontWeight.w700),
                         ),
-                      const SizedBox(
+                        const SizedBox(
                           height: 10,
                         ),
                         Text(
