@@ -47,10 +47,52 @@ class _CharactersPagePageState extends State<CharactersPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: const Text(
-        'Heróis da Marvel',
-      ),
+    return Card(
+      child: ListView.builder(
+        itemCount:
+            (characters.data == null) || characters.data!.results == null,
+        itemBuilder: (BuildContext context, int index) {},
+      )
+          ? 0
+          : characters.data!.results!.length,
+      itemBuilder: (_, int index) {
+        return Container(
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Image.network(
+                characters.thumbnail!.path! +
+                    "." +
+                    characters.thumbnail!.extension!,
+                width: 150,
+                height: 150,
+              ),
+              Expanded(
+                child: Container(
+                  margin: const EdgeInsets.symmetric(
+                    vertical: 8,
+                    horizontal: 8,
+                  ),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        characters.name!,
+                        style: const TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                      Text(characters.description),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
+        );
+      },
     );
   }
 }
