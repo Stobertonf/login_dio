@@ -1,15 +1,48 @@
 import 'package:dio/dio.dart';
+import 'back4app_custon_dio.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
-import 'package:login_dio_flutter/repositories/back4App/back4app_dio_interceptor.dart';
+import 'package:login_dio_flutter/models/tarefas_back4app_model.dart';
 
-class Back4AppCustonDio {
-  final _dio = Dio();
+class TarefasBack4AppRepositoy {
+  final _custonDio = Back4AppCustonDio();
 
-  Dio get dio => _dio;
+  TarefasBack4AppRepositoy();
 
-  Back4AppCustonDio() {
-    _dio.options.headers["Content-Type"] = "application/json";
-    _dio.options.baseUrl = dotenv.get("BACK4APPBASEURL");
-    _dio.interceptors.add(Back4AppDioInterceptor());
+  Future<TarefasBack4AppModel> obterTarefas(bool naoConcluidas) async {
+    var url = "/Tarefas";
+    if (naoConcluidas) {
+      url = "$url?where={\"concluido\":false}";
+    }
+    var result = await _custonDio.dio.get(url);
+    return TarefasBack4AppModel.fromJson(result.data);
+  }
+
+  Future<void> criar(TarefaBack4AppModel tarefaBack4AppModel) async {
+    try {
+      await _custonDio.dio
+          .post("/Tarefas", data: tarefaBack4AppModel.toJsonEndpoint());
+    } catch (e) {
+      throw e;
+    }
+  }
+
+  Future<void> atualizar(TarefaBack4AppModel tarefaBack4AppModel) async {
+    try {
+      var response = await _custonDio.dio.put(
+          "/Tarefas/${tarefaBack4AppModel.objectId}",
+          data: tarefaBack4AppModel.toJsonEndpoint());
+    } catch (e) {
+      throw e;
+    }
+  }
+
+  Future<void> remover(String objectId) async {
+    try {
+      var response = await _custonDio.dio.delete(
+        "/Tarefas/$objectId",
+      );
+    } catch (e) {
+      throw e;
+    }
   }
 }
