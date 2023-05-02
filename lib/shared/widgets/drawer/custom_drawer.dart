@@ -3,6 +3,7 @@ import 'package:login_dio_flutter/pages/post/post_page.dart';
 import 'package:login_dio_flutter/pages/login/login_page.dart';
 import 'package:login_dio_flutter/pages/tasks/tasks_page.dart';
 import 'package:login_dio_flutter/pages/config/random_numbers.dart';
+import 'package:login_dio_flutter/pages/tasks/tarefa_http_page.dart';
 import 'package:login_dio_flutter/pages/characters/characters_page.dart';
 import 'package:login_dio_flutter/pages/registration/dados_cadastrais.dart';
 
@@ -247,6 +248,74 @@ class CustomDrawer extends StatelessWidget {
           const Divider(),
           const SizedBox(
             height: 10,
+          ),
+          InkWell(
+            child: Container(
+                padding:
+                    const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                width: double.infinity,
+                child: const Row(
+                  children: [
+                    Icon(Icons.help),
+                    SizedBox(
+                      width: 5,
+                    ),
+                    Text("Herois"),
+                  ],
+                )),
+            onTap: () async {
+              Navigator.pop(context);
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (bc) => const CharactersPage()));
+            },
+          ),
+          const Divider(),
+          const SizedBox(
+            height: 10,
+          ),
+          InkWell(
+            child: Container(
+                padding:
+                    const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                width: double.infinity,
+                child: const Row(
+                  children: [
+                    Icon(Icons.help),
+                    SizedBox(
+                      width: 5,
+                    ),
+                    Text("Tarefas"),
+                  ],
+                )),
+            onTap: () async {
+              Navigator.pop(context);
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (bc) => const TaskPage()));
+            },
+          ),
+          const Divider(),
+          const SizedBox(
+            height: 10,
+          ),
+          InkWell(
+            child: Container(
+                padding:
+                    const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                width: double.infinity,
+                child: const Row(
+                  children: [
+                    Icon(Icons.help),
+                    SizedBox(
+                      width: 5,
+                    ),
+                    Text("Tarefas HTTP"),
+                  ],
+                )),
+            onTap: () async {
+              Navigator.pop(context);
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (bc) => const TarefaHttpPage()));
+            },
           ),
           InkWell(
             child: Container(
